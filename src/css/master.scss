@@ -1,0 +1,176 @@
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_variables";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_mixins";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_grid";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_responsive-utilities";
+@import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap/_type";
+$theme-color: darkblue;
+$login_icon-size: 20px;
+$nav_icon-size: 19px;
+$nav_user_icon-size: 40px;
+$icon-size: 60px;
+$icon-box-size: 130px;
+@mixin top-offset($offBy){
+  position: relative;
+  top:$offBy;
+}
+
+html {
+    font-size: 12px;
+    font-family: 'Helvetica Neue', Helvetica, Arial, "Lucida Grande", sans-serif;
+
+    body {
+        // background: url(../img/WSDH.png);
+
+        .nav{
+          @extend .container-fluid;
+          margin: 20px 20px 0 0;
+          padding: 0;
+          overflow: hidden;
+          list-style-type: none;
+
+          .nav-link{
+              float:right;
+              margin: 7.5px;
+
+              a{
+                text-decoration: none;
+
+                img{
+                  width: $nav_icon-size;
+                  height: auto;
+                }
+              }
+          }
+          .nav-userimg{
+            a{
+              img{
+                width: $nav_user_icon-size;
+                height: auto;
+                margin-top:-10px;
+              }
+            }
+          }
+        }
+
+        header{
+          // @include top-offset(60px);
+          @extend .container;
+        }
+
+        footer{
+          // @include top-offset(60px);
+          position: relative;
+          bottom: 0;
+          margin: 20px 0;
+          width:100%;
+          @extend .text-center;
+        }
+
+        .login{
+          @include center-block;
+          width: 300px;
+          font-size: 20px;
+
+            .login-box{
+
+                .login-box-field{
+
+                    .login-box-field-email{
+
+                      margin: 10px 0;
+                      height:55px;
+                      border-radius: 30px;
+                      border: darkblue solid 1.25pt;
+                      img{
+                        display: inline;
+                        height: $login_icon-size;
+                        padding: 5px 0 0 15px ;
+                      }
+                      input{
+                        padding:20px;
+                        border: none;
+                        display: inline;
+                      }
+                    }
+
+                    .login-box-field-password{
+                        margin: 10px 0;
+                        height:55px;
+                        border-radius: 30px;
+                        border: darkblue solid 1.25pt;
+                        img{
+                          display: inline;
+                          height: $login_icon-size;
+                          padding: 5px 0 0 15px ;
+
+                        }
+                        input{
+                          padding:20px;
+                          margin-top:0;
+                          display: inline;
+                          border: none;
+                          display: inline;
+                        }
+                    }
+
+                    .login-box-field-submit{
+                      margin: 10px 0;
+                      height:55px;
+                      width:100%;
+                      background-color: darkblue;
+                      color:white;
+                      border:none;
+                      border-radius: 30px;
+                    }
+
+                }
+                .login-box-forgot{
+                    color: $theme-color;
+                    @extend .text-center;
+                    font-size: 15px;
+                }
+            }
+        }
+
+        .main{
+          // @include top-offset(60px);
+          @extend .container;
+          @include center-block;
+
+
+            .main-apps{
+              @extend .row;
+              margin-left: auto;
+              margin-right: auto;
+
+                .main-apps-container{
+                  @include make-xs-column(3);
+                  @include make-sm-column(3);
+                  @include make-md-column(3);
+                  @include make-lg-column(3);
+
+                    .main-apps-container-icon{
+                        width: $icon-box-size;
+                        height: $icon-box-size;
+                        margin: 10px;
+                        padding:35px;
+                      	box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.17);
+                        display: inline-block;
+                        vertical-align: middle;
+                        @include center-block;
+
+                        img{
+                          width: $icon-size;
+                          height: auto;
+                          vertical-align: middle;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+img{
+  @include center-block;
+}
